@@ -4,8 +4,8 @@ const catálogoProductos = [
     { id: 'aguacate-grande', nombre: 'Aguacate (Grande)', categoria: 'aguacates', unidad: 'Cestas', destacado: true, emoji: '🥑', imagen: 'assets/images/aguacate.jpg' },
     { id: 'aguacate-mediano', nombre: 'Aguacate (Mediano)', categoria: 'aguacates', destacado: true, unidad: 'Cestas', emoji: '🥑', imagen: 'assets/images/aguacate.jpg' },
     { id: 'aguacate-pequeno', nombre: 'Aguacate (Pequeño)', categoria: 'aguacates', destacado: true, unidad: 'Cestas', emoji: '🥑', imagen: 'assets/images/aguacate.jpg' },
-    { id: 'limon', nombre: 'Limón Persa', categoria: 'frutas', destacado: true, unidad: 'Cestas', emoji: '🍋', imagen: 'assets/images/limon.webp' },
-    { id: 'lechoza', nombre: 'Lechoza Criolla', categoria: 'frutas', destacado: true, unidad: 'Kilos', emoji: '🍈', imagen: 'assets/images/lechoza.jpg' },
+    { id: 'limon', nombre: 'Limón', categoria: 'frutas', destacado: true, unidad: 'Cestas', emoji: '🍋', imagen: 'assets/images/limon.webp' },
+    { id: 'lechoza', nombre: 'Lechoza', categoria: 'frutas', destacado: true, unidad: 'Kilos', emoji: '🍐', imagen: 'assets/images/lechoza.jpg' },
     { id: 'coco', nombre: 'Coco Seco', categoria: 'frutas', destacado: true, unidad: 'Cestas', emoji: '🥥', imagen: 'assets/images/coco.jfif' },
     { id: 'melon', nombre: 'Melón', categoria: 'frutas', destacado: true, unidad: 'Kilos', emoji: '🍈', imagen: 'assets/images/melon.jpg' },
 
@@ -13,7 +13,7 @@ const catálogoProductos = [
 
     // Catálogo General (Solo Emojis y lista compacta)
     { id: 'naranja', nombre: 'Naranja', categoria: 'frutas', destacado: false, unidad: 'Cestas', emoji: '🍊', imagen: 'assets/images/naranja.jpg' },
-    { id: 'mandarina', nombre: 'Mandarina', categoria: 'frutas', destacado: false, unidad: 'Cestas', emoji: '🍊', imagen: 'assets/images/mandarina.jfif' },
+    { id: 'mandarina', nombre: 'Mandarina', categoria: 'frutas', destacado: false, unidad: 'Cestas', emoji: '🟠', imagen: 'assets/images/mandarina.jfif' },
     { id: 'cambur', nombre: 'Cambur', categoria: 'frutas', destacado: false, unidad: 'Cestas', emoji: '🍌' },
     { id: 'pina', nombre: 'Piña', categoria: 'frutas', destacado: false, unidad: 'Cestas', emoji: '🍍' },
     { id: 'mango', nombre: 'Mango Hilacha', categoria: 'frutas', destacado: false, unidad: 'Cestas', emoji: '🥭' },
