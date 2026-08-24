@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frutícola La Culebra: Mayoristas de Frutas y Verduras en Coche</title>
+    <meta name="description"
+        content="Distribución y Venta de Frutas y Verduras al Mayor en Caracas. Especialistas en Aguacates. Precios reales del Mercado de Coche.">
+
+    <!-- Open Graph Data -->
+    <meta property="og:title" content="Frutícola La Culebra - Mayoristas en Caracas">
+    <meta property="og:description"
+        content="Llevamos la frescura del Mercado de Coche directo a tu negocio. Cotiza al instante.">
+    <meta property="og:image" content="assets/images/hero_bg.jpg">
+    <meta property="og:url" content="https://fruticolalaculebra.com">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'cream': '#fdfbf7',
+                        'avocado-deep': '#2e5a1c',
+                        'fresh-green': '#16a34a',
+                        'warm-orange': '#f59e0b',
+                    },
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- JSON-LD Local Business -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WholesaleStore",
+      "name": "Frutícola La Culebra",
+      "image": "assets/images/hero_bg.jpg",
+      "description": "Distribución y Venta de Frutas y Verduras al Mayor en Caracas. Especialistas en aguacates.",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Mercado Mayor de Coche, Sector Playa Tercero, Local PT 15",
+        "addressLocality": "Caracas",
+        "addressCountry": "VE"
+      },
+      "priceRange": "$$",
+      "telephone": "+580000000000"
+    }
+    </script>
+</head>
+
+<body class="font-inter bg-cream text-gray-800">
+
+    <!-- Header & Nav -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <div class="flex-shrink-0 flex items-center gap-2">
+                <span class="text-2xl font-bold text-avocado-deep">La Culebra 🥑</span>
+            </div>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#about" class="text-gray-600 hover:text-avocado-deep transition font-medium">Nosotros</a>
+                <a href="#process" class="text-gray-600 hover:text-avocado-deep transition font-medium">Cómo
+                    Funciona</a>
+                <a href="#catalog" class="text-gray-600 hover:text-avocado-deep transition font-medium">Catálogo</a>
+            </nav>
+            <div>
+                <button id="open-cart-btn"
+                    class="bg-fresh-green hover:bg-avocado-deep text-white px-5 py-2 rounded-full font-semibold transition flex items-center gap-3 shadow-md">
+                    <span>🛒 Cotización</span>
+                    <span id="cart-count" class="bg-white text-fresh-green rounded-full px-2 py-0.5 text-xs">0</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+
+        <!-- 1. HERO SECTION -->
+        <section class="relative min-h-[85vh] py-20 flex items-center justify-center overflow-hidden">
+            <div class="absolute inset-0 z-0">
+                <img src="assets/images/hero_bg.jpg" alt="Mercado Mayor de Coche, vegetales frescos"
+                    class="w-full h-full object-cover" loading="lazy">
+                <div class="absolute inset-0 bg-black bg-opacity-60"></div>
+            </div>
+            <div class="relative z-10 text-center px-4 sm:px-6 max-w-4xl mx-auto">
+                <h1 class="text-3xl sm:text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">
+                    Frutícola La Culebra: Distribución y Venta de Frutas y Verduras al Mayor en Caracas
+                </h1>
+                <p class="text-lg sm:text-xl text-gray-200 mb-8 max-w-3xl mx-auto leading-relaxed">
+                    Llevamos la frescura del Mercado de Coche directo a tu negocio. Seleccionamos cuidadosamente cada
+                    rubro para garantizar la máxima calidad en tu flete.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                    <a href="#catalog"
+                        class="w-full sm:w-auto text-white font-bold py-4 px-8 rounded-full text-lg shadow-lg cta-glow-effect">
+                        <span>Explorar Catálogo Mayorista</span>
+                        <span class="cta-arrow-bounce">🥑</span>
+                    </a>
+                    <a href="#about"
+                        class="w-full sm:w-auto bg-transparent border-2 border-white text-white hover:bg-white hover:text-avocado-deep font-bold py-4 px-8 rounded-full text-lg transition duration-300">
+                        Conocer Nuestra Historia
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. CARRUSEL DINÁMICO DE CONCURRENCIA -->
+        <section class="py-12 bg-cream overflow-hidden shadow-inner relative z-20 -mt-6">
+            <div class="max-w-7xl mx-auto px-4 text-center mb-8">
+                <h2 class="text-2xl font-bold text-avocado-deep">Nuestros Rubros Estrella</h2>
+            </div>
+            <div class="carousel-container relative">
+                <div class="carousel-track flex gap-6 px-4 animate-scroll" id="carousel-track">
+                    <!-- Carousel Items generated via JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. SOBRE NOSOTROS -->
+        <section id="about" class="py-16 md:py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+                    <div class="w-full max-w-2xl mx-auto">
+                        <h2 class="text-3xl sm:text-4xl font-bold text-avocado-deep mb-4 sm:mb-6">Nacidos en el Corazón de Coche</h2>
+                        <p class="text-gray-600 mb-4 text-base sm:text-lg leading-relaxed">
+                            Somos un negocio familiar con raíces profundas en el Mercado Mayor de Coche, Sector Playa
+                            Tercero, Local PT 15. Conocemos el movimiento, la tierra y la frescura mejor que nadie.
+                        </p>
+                        <ul class="space-y-4 sm:space-y-6 mt-6 sm:mt-8">
+                            <li class="flex items-start">
+                                <span class="text-fresh-green text-2xl sm:text-3xl mr-3 sm:mr-4 bg-green-50 p-2.5 sm:p-3 rounded-xl flex-shrink-0">⚖️</span>
+                                <div>
+                                    <h3 class="font-bold text-gray-800 text-base sm:text-lg">Honestidad Garantizada</h3>
+                                    <p class="text-gray-600 text-sm mt-1">Transparencia en precios reales y pesos
+                                        exactos, sin sorpresas.</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-fresh-green text-2xl sm:text-3xl mr-3 sm:mr-4 bg-green-50 p-2.5 sm:p-3 rounded-xl flex-shrink-0">🥑</span>
+                                <div>
+                                    <h3 class="font-bold text-gray-800 text-base sm:text-lg">Selección Manual Especializada</h3>
+                                    <p class="text-gray-600 text-sm mt-1">Expertos en aguacates por tamaño, lechoza,
+                                        limón, coco y melón.</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-fresh-green text-2xl sm:text-3xl mr-3 sm:mr-4 bg-green-50 p-2.5 sm:p-3 rounded-xl flex-shrink-0">🚚</span>
+                                <div>
+                                    <h3 class="font-bold text-gray-800 text-base sm:text-lg">Puntualidad en Despachos</h3>
+                                    <p class="text-gray-600 text-sm mt-1">Llevamos tu flete a cualquier punto de Caracas
+                                        en el tiempo acordado.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="relative mt-8 lg:mt-0 max-w-lg mx-auto w-full">
+                        <div
+                            class="absolute inset-0 bg-avocado-deep rounded-2xl transform translate-x-3 translate-y-3 sm:translate-x-4 sm:translate-y-4 opacity-20">
+                        </div>
+                        <img src="assets/images/about_us.jpg" alt="Mercado Mayor de Coche, Equipo trabajando"
+                            class="relative rounded-2xl shadow-xl w-full h-auto object-cover" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. EL PROCESO DE COMPRA -->
+        <section id="process" class="py-24 bg-cream">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <span class="text-fresh-green font-bold tracking-wider uppercase text-sm mb-2 block">Seguridad en el
+                    Flujo</span>
+                <h2 class="text-4xl font-bold text-avocado-deep mb-6">¿Por qué no publicamos precios?</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto mb-16">
+                    En el mercado de abasto, la mercancía fresca fluctúa de precio a diario. Por eso, te cotizamos al
+                    día con los <strong>mejores precios reales de Coche</strong>, asegurando que siempre pagues lo justo
+                    al momento de tu compra.
+                </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                    <div
+                        class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+                        <div
+                            class="w-16 h-16 bg-green-50 text-fresh-green rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6">
+                            1</div>
+                        <h3 class="font-bold text-lg mb-3">Selecciona tu Mercancía</h3>
+                        <p class="text-gray-500 text-sm leading-relaxed">Añade cestas o kilos a tu cotizador
+                            interactivo.</p>
+                    </div>
+                    <div
+                        class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+                        <div
+                            class="w-16 h-16 bg-green-50 text-fresh-green rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6">
+                            2</div>
+                        <h3 class="font-bold text-lg mb-3">Envía tu Lista</h3>
+                        <p class="text-gray-500 text-sm leading-relaxed">Un clic y tu pedido viaja directo a nuestro
+                            WhatsApp oficial.</p>
+                    </div>
+                    <div
+                        class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+                        <div
+                            class="w-16 h-16 bg-green-50 text-fresh-green rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6">
+                            3</div>
+                        <h3 class="font-bold text-lg mb-3">Cotizamos al Instante</h3>
+                        <p class="text-gray-500 text-sm leading-relaxed">Te damos los precios del día desde el corazón
+                            del mercado.</p>
+                    </div>
+                    <div
+                        class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+                        <div
+                            class="w-16 h-16 bg-green-50 text-fresh-green rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6">
+                            4</div>
+                        <h3 class="font-bold text-lg mb-3">Despachamos</h3>
+                        <p class="text-gray-500 text-sm leading-relaxed">Coordinamos la entrega rápida y directa en tu
+                            local en Caracas.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4 & 5. EL CATÁLOGO CATEGORIZADO -->
+        <section id="catalog" class="py-24 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold text-avocado-deep mb-8">Comenzar mi Lista de Cotización</h2>
+                    <!-- Buscador -->
+                    <div class="max-w-xl mx-auto relative">
+                        <span class="absolute inset-y-0 left-0 pl-4 flex items-center text-gray-400">
+                            🔍
+                        </span>
+                        <input type="text" id="search-input"
+                            placeholder="Buscar rubro (ej. aguacate, limón, lechoza...)"
+                            class="w-full pl-12 pr-4 py-4 rounded-full border-2 border-gray-100 bg-gray-50 focus:bg-white focus:border-fresh-green focus:ring-4 focus:ring-green-50 focus:outline-none transition-all shadow-sm text-lg">
+                    </div>
+                </div>
+
+                <!-- Productos Estrella (Destacados) -->
+                <div class="mb-16">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-6 flex items-center gap-2">
+                        <span class="text-3xl">⭐</span> Productos Estrella
+                    </h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
+                        id="featured-products-grid">
+                        <!-- Featured products injected via JS -->
+                    </div>
+                </div>
+
+                <!-- Tabs -->
+                <div class="flex flex-wrap justify-center gap-4 mb-8" id="category-tabs">
+                    <button type="button"
+                        class="tab-btn active px-8 py-3 rounded-full font-semibold transition bg-fresh-green text-white shadow-md"
+                        data-category="all">Todas</button>
+                    <button type="button"
+                        class="tab-btn px-8 py-3 rounded-full font-semibold transition bg-gray-100 text-gray-600 hover:bg-gray-200"
+                        data-category="aguacates">Aguacates 🥑</button>
+                    <button type="button"
+                        class="tab-btn px-8 py-3 rounded-full font-semibold transition bg-gray-100 text-gray-600 hover:bg-gray-200"
+                        data-category="frutas">Frutas 🍎</button>
+                    <button type="button"
+                        class="tab-btn px-8 py-3 rounded-full font-semibold transition bg-gray-100 text-gray-600 hover:bg-gray-200"
+                        data-category="hortalizas">Hortalizas y Verduras 🥕</button>
+                </div>
+
+                <!-- Hoja de Pedido Mayorista (Lista) -->
+                <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+                    <ul id="general-products-list" class="divide-y divide-gray-100">
+                        <!-- General products injected via JS -->
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- 7. EL COTIZADOR (DRAWER) -->
+    <div id="cart-drawer" class="fixed inset-0 z-50 invisible">
+        <div class="absolute inset-0 bg-black bg-opacity-60 transition-opacity opacity-0 backdrop-blur-sm"
+            id="cart-overlay"></div>
+        <div class="absolute inset-y-0 right-0 w-full max-w-md bg-white shadow-2xl transform translate-x-full transition-transform duration-300 flex flex-col"
+            id="cart-panel">
+            <div class="p-6 border-b flex justify-between items-center bg-avocado-deep text-white">
+                <div class="flex items-center gap-3">
+                    <span class="text-2xl">🛒</span>
+                    <h2 class="text-xl font-bold">Tu Lista de Cotización</h2>
+                </div>
+                <button id="close-cart-btn"
+                    class="text-white hover:text-gray-300 text-3xl leading-none">&times;</button>
+            </div>
+
+            <div class="flex-1 overflow-y-auto p-6 bg-gray-50" id="cart-items">
+                <!-- Cart items list here -->
+                <div class="h-full flex flex-col items-center justify-center text-center">
+                    <span class="text-6xl mb-4 opacity-20">📝</span>
+                    <p class="text-gray-500 text-lg">Aún no has agregado rubros a tu lista.</p>
+                </div>
+            </div>
+
+            <div class="p-6 border-t bg-white shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.05)]">
+                <div class="mb-5">
+                    <label for="special-request" class="block text-sm font-semibold text-gray-700 mb-2">Mercancía
+                        Especial o No Listada</label>
+                    <textarea id="special-request" rows="2"
+                        class="w-full p-4 border border-gray-200 rounded-xl focus:outline-none focus:border-fresh-green focus:ring-2 focus:ring-green-50 text-sm resize-none bg-gray-50 focus:bg-white transition-all"
+                        placeholder="¿Deseas agregar algo más? Escríbelo aquí y nosotros lo conseguimos por ti en el Mercado de Coche"></textarea>
+                </div>
+                <button id="whatsapp-checkout-btn"
+                    class="w-full bg-fresh-green hover:bg-green-600 text-white font-bold py-4 rounded-xl flex items-center justify-center gap-3 transition shadow-lg transform hover:-translate-y-1">
+                    <span>Solicitar Cotización de Hoy</span>
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating Support Button -->
+    <a href="https://wa.me/584241576083?text=Hola,%20necesito%20soporte%20rápido" target="_blank"
+        class="fixed bottom-6 left-6 bg-fresh-green text-white p-4 rounded-full shadow-2xl hover:bg-green-600 transition z-40 transform hover:scale-110 flex items-center justify-center">
+        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+            <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+        </svg>
+    </a>
+
+    <!-- 8. FOOTER Y MAPA -->
+    <footer class="bg-gray-900 text-white pt-20 pb-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-16 mb-16">
+                <div>
+                    <h2 class="text-3xl font-bold text-fresh-green mb-6">Frutícola La Culebra 🥑</h2>
+                    <p class="text-gray-400 mb-8 text-lg leading-relaxed">Distribuidores mayoristas de frutas y verduras
+                        frescas para todo tipo de negocios gastronómicos en Caracas. Directo de Coche a tu local.</p>
+                    <ul class="space-y-4 text-gray-300">
+                        <li class="flex items-start gap-3">
+                            <span class="text-xl">📍</span>
+                            <span>Mercado Mayor de Coche, Sector Playa Tercero, Local PT 15, Caracas, Venezuela.</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <span class="text-xl">📞</span>
+                            <span>+58 4241576083</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <span class="text-xl">🕒</span>
+                            <span>Lunes a Domingo - 4:00 AM a 4:00 PM</span>
+                        </li>
+                    </ul>
+                </div>
+                <div
+                    class="h-80 rounded-2xl overflow-hidden shadow-2xl bg-gray-800 flex items-center justify-center border border-gray-700 relative">
+                    <!-- Mapa embebido (Iframe de Google Maps representativo) -->
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d301.7555502465653!2d-66.9277460820303!3d10.43901635558613!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1ses-419!2sve!4v1787606615104!5m2!1ses-419!2sve"
+                        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+            <div
+                class="border-t border-gray-800 pt-8 text-center text-gray-500 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p>&copy;
+                    <script>document.write(new Date().getFullYear())</script> Frutícola La Culebra. Todos los derechos
+                    reservados.
+                </p>
+                <p class="text-sm">Desarrollado para distribución mayorista.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js" charset="UTF-8"></script>
+</body>
+
+</html>
