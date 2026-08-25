@@ -100,6 +100,19 @@ function renderCarousel() {
     `).join('');
 }
 
+// --- Función de formateo estético de categorías ---
+function getCategoryLabel(categoria) {
+    const map = {
+        'aguacates': 'Aguacates',
+        'frutas': 'Frutas',
+        'alinos': 'Aliños',
+        'aliños': 'Aliños',
+        'verduras': 'Verduras',
+        'hortalizas': 'Hortalizas'
+    };
+    return map[categoria] || (categoria.charAt(0).toUpperCase() + categoria.slice(1));
+}
+
 function renderFeaturedProducts() {
     if (!featuredGrid) return;
     const featured = catálogoProductos.filter(p => p.destacado);
@@ -108,7 +121,7 @@ function renderFeaturedProducts() {
             <div class="relative h-48 overflow-hidden">
                 <img src="${product.imagen}" alt="${product.nombre}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                 <div class="absolute top-4 left-4 bg-white/90 backdrop-blur text-fresh-green text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
-                    ${product.categoria}
+                    ${getCategoryLabel(product.categoria)}
                 </div>
             </div>
             <div class="p-5 flex-1 flex flex-col">
@@ -148,7 +161,7 @@ function renderGeneralProducts(items) {
                 <span class="text-3xl flex-shrink-0">${product.emoji || '📦'}</span>
                 <div>
                     <h4 class="font-bold text-gray-800 text-base sm:text-lg leading-tight">${product.nombre}</h4>
-                    <span class="text-xs font-semibold text-fresh-green uppercase tracking-wider bg-green-50 px-2 py-0.5 rounded-md mt-1 inline-block">${product.categoria}</span>
+                    <span class="text-xs font-semibold text-fresh-green uppercase tracking-wider bg-green-50 px-2 py-0.5 rounded-md mt-1 inline-block">${getCategoryLabel(product.categoria)}</span>
                 </div>
             </div>
             <div class="flex items-center justify-between sm:justify-end gap-3 sm:gap-4 w-full sm:w-auto">
