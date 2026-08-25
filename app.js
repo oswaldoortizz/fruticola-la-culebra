@@ -73,10 +73,14 @@ const cartItemsContainer = document.getElementById('cart-items');
 const whatsappBtn = document.getElementById('whatsapp-checkout-btn');
 const specialRequest = document.getElementById('special-request');
 
-// --- 4. Inicialización ---
+// --- 4. Inicialización con Verificación Defensiva ---
 function init() {
-    renderCarousel();
-    renderFeaturedProducts();
+    if (carouselTrack) {
+        renderCarousel();
+    }
+    if (featuredGrid) {
+        renderFeaturedProducts();
+    }
     if (generalList) {
         filterProducts();
     }
@@ -202,23 +206,25 @@ function filterProducts() {
     renderGeneralProducts(filtered);
 }
 
-// --- 7. Event Listeners y Delegación de Eventos (Bug A Solucionado) ---
+// --- 7. Event Listeners y Delegación de Eventos ---
 
 function setupEventListeners() {
-    tabs.forEach(tab => {
-        tab.addEventListener('click', (e) => {
-            e.preventDefault();
-            e.stopPropagation();
-            tabs.forEach(t => {
-                t.classList.remove('active', 'bg-fresh-green', 'text-white', 'shadow-md');
-                t.classList.add('bg-gray-100', 'text-gray-600', 'hover:bg-gray-200');
+    if (tabs && tabs.length > 0) {
+        tabs.forEach(tab => {
+            tab.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                tabs.forEach(t => {
+                    t.classList.remove('active', 'bg-fresh-green', 'text-white', 'shadow-md');
+                    t.classList.add('bg-gray-100', 'text-gray-600', 'hover:bg-gray-200');
+                });
+                const clicked = e.currentTarget;
+                clicked.classList.remove('bg-gray-100', 'text-gray-600', 'hover:bg-gray-200');
+                clicked.classList.add('active', 'bg-fresh-green', 'text-white', 'shadow-md');
+                filterProducts();
             });
-            const clicked = e.currentTarget;
-            clicked.classList.remove('bg-gray-100', 'text-gray-600', 'hover:bg-gray-200');
-            clicked.classList.add('active', 'bg-fresh-green', 'text-white', 'shadow-md');
-            filterProducts();
         });
-    });
+    }
 
     if (searchInput) {
         searchInput.addEventListener('input', filterProducts);
@@ -294,9 +300,11 @@ function addToCart(productId, qty = 1, triggerBtn = null, inputToReset = null) {
         btn.classList.remove('bg-avocado-deep');
 
         setTimeout(() => {
-            textSpan.innerText = originalText;
-            btn.classList.remove('bg-fresh-green');
-            btn.classList.add('bg-avocado-deep');
+            if (textSpan) textSpan.innerText = originalText;
+            if (btn) {
+                btn.classList.remove('bg-fresh-green');
+                btn.classList.add('bg-avocado-deep');
+            }
             if (inputToReset) inputToReset.value = 1;
         }, 1500);
     }
@@ -305,7 +313,7 @@ function addToCart(productId, qty = 1, triggerBtn = null, inputToReset = null) {
     if (cartCount) {
         cartCount.classList.add('scale-150', 'text-white', 'bg-avocado-deep');
         setTimeout(() => {
-            cartCount.classList.remove('scale-150', 'text-white', 'bg-avocado-deep');
+            if (cartCount) cartCount.classList.remove('scale-150', 'text-white', 'bg-avocado-deep');
         }, 300);
     }
 }
@@ -383,7 +391,7 @@ function closeCart() {
     if (cartOverlay) cartOverlay.classList.add('opacity-0');
     if (cartPanel) cartPanel.classList.add('translate-x-full');
     setTimeout(() => {
-        cartDrawer.classList.add('invisible');
+        if (cartDrawer) cartDrawer.classList.add('invisible');
     }, 300);
 }
 
