@@ -3,55 +3,55 @@
 // Base de Datos y Lógica del Catálogo Mayorista (v7)
 // ==========================================
 
-// --- 1. Base de Datos Ampliada con Jerga de Caracas ---
+// --- 1. Base de Datos Oficial (v8) ---
 const catálogoProductos = [
-    // === CATEGORÍA: AGUACATES (Estrellas - Con Foto) ===
-    { id: 'aguacate-grande', nombre: 'Aguacate Hass (Grande)', categoria: 'aguacates', unidad: 'Cestas', destacado: true, emoji: '🥑', imagen: 'assets/images/aguacate.jpg' },
-    { id: 'aguacate-mediano', nombre: 'Aguacate Hass (Mediano)', categoria: 'aguacates', unidad: 'Cestas', destacado: true, emoji: '🥑', imagen: 'assets/images/aguacate.jpg' },
-    { id: 'aguacate-pequeno', nombre: 'Aguacate Hass (Pequeño)', categoria: 'aguacates', unidad: 'Cestas', destacado: true, emoji: '🥑', imagen: 'assets/images/aguacate.jpg' },
+    // === 1. PRODUCTOS ESTRELLA / DESTACADOS ===
+    { id: 'aguacate-grande', nombre: 'aguacate (Grande)', categoria: 'aguacates', unidad: 'Cestas', destacado: true, emoji: '🥑', imagen: 'assets/images/aguacate.jpg' },
+    { id: 'aguacate-mediano', nombre: 'aguacate (Mediano)', categoria: 'aguacates', unidad: 'Cestas', destacado: true, emoji: '🥑', imagen: 'assets/images/aguacate.jpg' },
+    { id: 'aguacate-pequeno', nombre: 'aguacate (Pequeño)', categoria: 'aguacates', unidad: 'Cestas', destacado: true, emoji: '🥑', imagen: 'assets/images/aguacate.jpg' },
+    { id: 'limon', nombre: 'limon', categoria: 'frutas', destacado: true, unidad: 'Cestas', emoji: '🍋', imagen: 'assets/images/limon.webp' },
+    { id: 'lechoza', nombre: 'lechoza', categoria: 'frutas', destacado: true, unidad: 'Kilos', emoji: '🍐', imagen: 'assets/images/lechoza.jpg' },
+    { id: 'coco', nombre: 'coco', categoria: 'frutas', destacado: true, unidad: 'Cestas', emoji: '🥥', imagen: 'assets/images/coco.jfif' },
+    { id: 'melon', nombre: 'melon', categoria: 'frutas', destacado: true, unidad: 'Kilos', emoji: '🍈', imagen: 'assets/images/melon.jpg' },
 
-    // === CATEGORÍA: FRUTAS (Estrellas y Extenso) ===
-    { id: 'limon-persa', nombre: 'Limón Persa', categoria: 'frutas', destacado: true, unidad: 'Cestas', emoji: '🍋', imagen: 'assets/images/limon.webp' },
-    { id: 'lechoza-criolla', nombre: 'Lechoza Criolla', categoria: 'frutas', destacado: true, unidad: 'Kilos', emoji: '🍐', imagen: 'assets/images/lechoza.jpg' },
-    { id: 'coco-seco', nombre: 'Coco Seco', categoria: 'frutas', destacado: true, unidad: 'Cestas', emoji: '🥥', imagen: 'assets/images/coco.jfif' },
-    { id: 'melon-criollo', nombre: 'Melón', categoria: 'frutas', destacado: true, unidad: 'Kilos', emoji: '🍈', imagen: 'assets/images/melon.jpg' },
-    { id: 'patilla', nombre: 'Patilla Entera', categoria: 'frutas', destacado: true, unidad: 'Kilos', emoji: '🍉', imagen: 'assets/images/patilla.jpg' },
-    { id: 'cambur-guinea', nombre: 'Cambur Guinea (Verde / Maduro)', categoria: 'frutas', destacado: false, unidad: 'Cestas', emoji: '🍌' },
-    { id: 'pina-cabezona', nombre: 'Piña Cabezona', categoria: 'frutas', destacado: false, unidad: 'Cestas', emoji: '🍍' },
-    { id: 'naranja-jugo', nombre: 'Naranja de Jugo (California)', categoria: 'frutas', destacado: false, unidad: 'Cestas', emoji: '🍊', imagen: 'assets/images/naranja.jpg' },
-    { id: 'mandarina-sin-semilla', nombre: 'Mandarina Sin Semilla', categoria: 'frutas', destacado: false, unidad: 'Cestas', emoji: '🍊', imagen: 'assets/images/mandarina.jfif' },
-    { id: 'mango-bocado', nombre: 'Mango de Bocado / Hilacha', categoria: 'frutas', destacado: false, unidad: 'Cestas', emoji: '🥭' },
-    { id: 'durazno-colonia', nombre: 'Durazno de la Colonia', categoria: 'frutas', destacado: false, unidad: 'Cestas', emoji: '🍑', imagen: 'assets/images/Duraznos.jpg' },
-    { id: 'parchita', nombre: 'Parchita de Sabor', categoria: 'frutas', destacado: false, unidad: 'Kilos', emoji: '🟡' },
+    // === 2. CATÁLOGO GENERAL EXTENSO ===
+    // Categoría: Frutas (Pestaña "Frutas 🍎")
+    { id: 'patilla', nombre: 'patilla', categoria: 'frutas', destacado: false, unidad: 'Kilos', emoji: '🍉', imagen: 'assets/images/patilla.jpg' },
+    { id: 'cambur', nombre: 'cambur', categoria: 'frutas', destacado: false, unidad: 'Cestas', emoji: '🍌' },
+    { id: 'pina', nombre: 'piña', categoria: 'frutas', destacado: false, unidad: 'Cestas', emoji: '🍍' },
+    { id: 'naranja', nombre: 'naranja', categoria: 'frutas', destacado: false, unidad: 'Cestas', emoji: '🍊', imagen: 'assets/images/naranja.jpg' },
+    { id: 'mandarina', nombre: 'mandarina', categoria: 'frutas', destacado: false, unidad: 'Cestas', emoji: '🍊', imagen: 'assets/images/mandarina.jfif' },
+    { id: 'mango', nombre: 'mango', categoria: 'frutas', destacado: false, unidad: 'Cestas', emoji: '🥭' },
+    { id: 'durazno', nombre: 'durazno', categoria: 'frutas', destacado: false, unidad: 'Cestas', emoji: '🍑', imagen: 'assets/images/Duraznos.jpg' },
+    { id: 'parchita', nombre: 'parchita', categoria: 'frutas', destacado: false, unidad: 'Kilos', emoji: '🟡' },
 
-    // === CATEGORÍA: ALIÑOS (Crucial para guisos caraqueños) ===
-    { id: 'aji-dulce-oriente', nombre: 'Ají Dulce Oriental', categoria: 'alinos', destacado: false, unidad: 'Sacos', emoji: '🌶️' },
-    { id: 'cebollin-fresco', nombre: 'Cebollín Criollo', categoria: 'alinos', destacado: false, unidad: 'Atados', emoji: '🌿' },
-    { id: 'cilantro-espana', nombre: 'Cilantro de España', categoria: 'alinos', destacado: false, unidad: 'Atados', emoji: '🌱' },
-    { id: 'perejil-liso', nombre: 'Perejil Liso', categoria: 'alinos', destacado: false, unidad: 'Atados', emoji: '🌿' },
-    { id: 'ajo-porro', nombre: 'Ajo Porro', categoria: 'alinos', destacado: false, unidad: 'Atados', emoji: '🥬' },
-    { id: 'ajo-criollo', nombre: 'Ajo Criollo (Malla)', categoria: 'alinos', destacado: false, unidad: 'Kilos', emoji: '🧄' },
-    { id: 'pimenton-verde', nombre: 'Pimentón Verde', categoria: 'alinos', destacado: false, unidad: 'Cestas', emoji: '🫑' },
+    // Categoría: Aliños (Pestaña "Aliños 🌿")
+    { id: 'aji', nombre: 'aji', categoria: 'alinos', destacado: false, unidad: 'Kilos', emoji: '🌶️' },
+    { id: 'cebollin', nombre: 'cebollin', categoria: 'alinos', destacado: false, unidad: 'Atados', emoji: '🌱' },
+    { id: 'cilantro', nombre: 'cilantro', categoria: 'alinos', destacado: false, unidad: 'Atados', emoji: '🌿' },
+    { id: 'perejil', nombre: 'perejil', categoria: 'alinos', destacado: false, unidad: 'Atados', emoji: '🍃' },
+    { id: 'ajo-porro', nombre: 'ajo porro', categoria: 'alinos', destacado: false, unidad: 'Atados', emoji: '🥬' },
+    { id: 'ajo-criollo', nombre: 'ajo criollo', categoria: 'alinos', destacado: false, unidad: 'Kilos', emoji: '🧄' },
+    { id: 'pimenton', nombre: 'pimenton', categoria: 'alinos', destacado: false, unidad: 'Kilos', emoji: '🫑' },
 
-    // === CATEGORÍA: HORTALIZAS Y VERDURAS (El flete pesado) ===
-    { id: 'papa-unica', nombre: 'Papa Única (Sabor de año)', categoria: 'hortalizas', destacado: false, unidad: 'Sacos', emoji: '🥔' },
-    { id: 'zanahoria-campo', nombre: 'Zanahoria de Campo', categoria: 'hortalizas', destacado: false, unidad: 'Sacos', emoji: '🥕' },
-    { id: 'yuca-dulce', nombre: 'Yuca Dulce (Fácil ablande)', categoria: 'hortalizas', destacado: false, unidad: 'Sacos', emoji: '🪵' },
-    { id: 'ocumo-chino', nombre: 'Ocumo Chino', categoria: 'hortalizas', destacado: false, unidad: 'Sacos', emoji: '🥔' },
-    { id: 'batata-dulce', nombre: 'Batata Dulce', categoria: 'hortalizas', destacado: false, unidad: 'Sacos', emoji: '🍠', imagen: 'assets/images/batata.webp' },
-    { id: 'name-criollo', nombre: 'Ñame Criollo', categoria: 'hortalizas', destacado: false, unidad: 'Sacos', emoji: '🥔' },
-    { id: 'auyama-tierna', nombre: 'Auyama Tierna', categoria: 'hortalizas', destacado: false, unidad: 'Kilos', emoji: '🎃' },
-    { id: 'repollo-blanco', nombre: 'Repollo Blanco', categoria: 'hortalizas', destacado: false, unidad: 'Cestas', emoji: '🥬' },
-    { id: 'tomate-manzano', nombre: 'Tomate Manzano (Pintón / Maduro)', categoria: 'hortalizas', destacado: false, unidad: 'Cestas', emoji: '🍅' }
+    // Categoría: Verduras y Hortalizas (Pestaña "Verduras 🥔")
+    { id: 'papa', nombre: 'papa', categoria: 'verduras', destacado: false, unidad: 'Sacos', emoji: '🥔' },
+    { id: 'zanahoria', nombre: 'zanahoria', categoria: 'verduras', destacado: false, unidad: 'Sacos', emoji: '🥕' },
+    { id: 'yuca', nombre: 'yuca', categoria: 'verduras', destacado: false, unidad: 'Sacos', emoji: '🪵' },
+    { id: 'ocumo-chino', nombre: 'ocumo chino', categoria: 'verduras', destacado: false, unidad: 'Sacos', emoji: '🤎' },
+    { id: 'name', nombre: 'ñame', categoria: 'verduras', destacado: false, unidad: 'Sacos', emoji: '🍠' },
+    { id: 'auyama', nombre: 'auyama', categoria: 'verduras', destacado: false, unidad: 'Kilos', emoji: '🎃' },
+    { id: 'repollo', nombre: 'repollo', categoria: 'verduras', destacado: false, unidad: 'Sacos', emoji: '🥬' },
+    { id: 'tomate', nombre: 'tomate', categoria: 'verduras', destacado: false, unidad: 'Cestas', emoji: '🍅' }
 ];
 
 const carouselItems = [
-    { id: 'aguacate-grande', name: 'Aguacate Hass', img: 'assets/images/aguacate.jpg' },
-    { id: 'limon-persa', name: 'Limón Persa', img: 'assets/images/limon.webp' },
-    { id: 'lechoza-criolla', name: 'Lechoza Criolla', img: 'assets/images/lechoza.jpg' },
-    { id: 'coco-seco', name: 'Coco Seco', img: 'assets/images/coco.jfif' },
-    { id: 'melon-criollo', name: 'Melón Criollo', img: 'assets/images/melon.jpg' },
-    { id: 'patilla', name: 'Patilla Entera', img: 'assets/images/patilla.jpg' }
+    { id: 'aguacate-grande', name: 'aguacate', img: 'assets/images/aguacate.jpg' },
+    { id: 'limon', name: 'limon', img: 'assets/images/limon.webp' },
+    { id: 'lechoza', name: 'lechoza', img: 'assets/images/lechoza.jpg' },
+    { id: 'coco', name: 'coco', img: 'assets/images/coco.jfif' },
+    { id: 'melon', name: 'melon', img: 'assets/images/melon.jpg' },
+    { id: 'patilla', name: 'patilla', img: 'assets/images/patilla.jpg' }
 ];
 
 // --- 2. Persistencia Compartida del Carrito (localStorage) ---
