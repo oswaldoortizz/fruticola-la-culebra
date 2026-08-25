@@ -1,28 +1,43 @@
 // --- Datos de Negocio ---
 const catálogoProductos = [
-    // Productos Estrella (Destacados con foto)
-    { id: 'aguacate-grande', nombre: 'Aguacate (Grande)', categoria: 'aguacates', unidad: 'Cestas', destacado: true, emoji: '🥑', imagen: 'assets/images/aguacate.jpg' },
-    { id: 'aguacate-mediano', nombre: 'Aguacate (Mediano)', categoria: 'aguacates', destacado: true, unidad: 'Cestas', emoji: '🥑', imagen: 'assets/images/aguacate.jpg' },
-    { id: 'aguacate-pequeno', nombre: 'Aguacate (Pequeño)', categoria: 'aguacates', destacado: true, unidad: 'Cestas', emoji: '🥑', imagen: 'assets/images/aguacate.jpg' },
-    { id: 'limon', nombre: 'Limón', categoria: 'frutas', destacado: true, unidad: 'Cestas', emoji: '🍋', imagen: 'assets/images/limon.webp' },
-    { id: 'lechoza', nombre: 'Lechoza', categoria: 'frutas', destacado: true, unidad: 'Kilos', emoji: '🍐', imagen: 'assets/images/lechoza.jpg' },
-    { id: 'coco', nombre: 'Coco Seco', categoria: 'frutas', destacado: true, unidad: 'Cestas', emoji: '🥥', imagen: 'assets/images/coco.jfif' },
-    { id: 'melon', nombre: 'Melón', categoria: 'frutas', destacado: true, unidad: 'Kilos', emoji: '🍈', imagen: 'assets/images/melon.jpg' },
+    // === 1. PRODUCTOS ESTRELLA / DESTACADOS (Con foto) ===
+    { id: 'aguacate-grande', nombre: 'aguacate (Grande)', categoria: 'aguacates', unidad: 'Cestas', destacado: true, emoji: '🥑', imagen: 'assets/images/aguacate.jpg' },
+    { id: 'aguacate-mediano', nombre: 'aguacate (Mediano)', categoria: 'aguacates', unidad: 'Cestas', destacado: true, emoji: '🥑', imagen: 'assets/images/aguacate.jpg' },
+    { id: 'aguacate-pequeno', nombre: 'aguacate (Pequeño)', categoria: 'aguacates', unidad: 'Cestas', destacado: true, emoji: '🥑', imagen: 'assets/images/aguacate.jpg' },
+    { id: 'limon', nombre: 'limon', categoria: 'frutas', destacado: true, unidad: 'Cestas', emoji: '🍋', imagen: 'assets/images/limon.webp' },
+    { id: 'lechoza', nombre: 'lechoza', categoria: 'frutas', destacado: true, unidad: 'Kilos', emoji: '🍐', imagen: 'assets/images/lechoza.jpg' },
+    { id: 'coco', nombre: 'coco', categoria: 'frutas', destacado: true, unidad: 'Cestas', emoji: '🥥', imagen: 'assets/images/coco.jfif' },
+    { id: 'melon', nombre: 'melon', categoria: 'frutas', destacado: true, unidad: 'Kilos', emoji: '🍈', imagen: 'assets/images/melon.jpg' },
 
-    { id: 'patilla', nombre: 'Patilla', categoria: 'frutas', destacado: true, unidad: 'Kilos', emoji: '🍉', imagen: 'assets/images/patilla.jpg' },
+    // === 2. CATÁLOGO GENERAL EXTENSO ===
+    // Categoría: Frutas (Pestaña "Frutas 🍎")
+    { id: 'patilla', nombre: 'patilla', categoria: 'frutas', destacado: false, unidad: 'Kilos', emoji: '🍉', imagen: 'assets/images/patilla.jpg' },
+    { id: 'cambur', nombre: 'cambur', categoria: 'frutas', destacado: false, unidad: 'Cestas', emoji: '🍌' },
+    { id: 'pina', nombre: 'piña', categoria: 'frutas', destacado: false, unidad: 'Cestas', emoji: '🍍' },
+    { id: 'naranja', nombre: 'naranja', categoria: 'frutas', destacado: false, unidad: 'Cestas', emoji: '🍊', imagen: 'assets/images/naranja.jpg' },
+    { id: 'mandarina', nombre: 'mandarina', categoria: 'frutas', destacado: false, unidad: 'Cestas', emoji: '🍊', imagen: 'assets/images/mandarina.jfif' },
+    { id: 'mango', nombre: 'mango', categoria: 'frutas', destacado: false, unidad: 'Cestas', emoji: '🥭' },
+    { id: 'durazno', nombre: 'durazno', categoria: 'frutas', destacado: false, unidad: 'Cestas', emoji: '🍑', imagen: 'assets/images/Duraznos.jpg' },
+    { id: 'parchita', nombre: 'parchita', categoria: 'frutas', destacado: false, unidad: 'Kilos', emoji: '🟡' },
 
-    // Catálogo General (Solo Emojis y lista compacta)
-    { id: 'naranja', nombre: 'Naranja', categoria: 'frutas', destacado: false, unidad: 'Cestas', emoji: '🍊', imagen: 'assets/images/naranja.jpg' },
-    { id: 'mandarina', nombre: 'Mandarina', categoria: 'frutas', destacado: false, unidad: 'Cestas', emoji: '🟠', imagen: 'assets/images/mandarina.jfif' },
-    { id: 'cambur', nombre: 'Cambur', categoria: 'frutas', destacado: false, unidad: 'Cestas', emoji: '🍌' },
-    { id: 'pina', nombre: 'Piña', categoria: 'frutas', destacado: false, unidad: 'Cestas', emoji: '🍍' },
-    { id: 'mango', nombre: 'Mango Hilacha', categoria: 'frutas', destacado: false, unidad: 'Cestas', emoji: '🥭' },
-    { id: 'durazno', nombre: 'Durazno', categoria: 'frutas', destacado: false, unidad: 'Cestas', emoji: '🍑', imagen: 'assets/images/Duraznos.jpg' },
-    { id: 'batata', nombre: 'Batata', categoria: 'hortalizas', destacado: false, unidad: 'Kilos', emoji: '🍠', imagen: 'assets/images/batata.webp' },
-    { id: 'papa', nombre: 'Papa (Saco)', categoria: 'hortalizas', destacado: false, unidad: 'Sacos', emoji: '🥔' },
-    { id: 'cebolla', nombre: 'Cebolla (Saco)', categoria: 'hortalizas', destacado: false, unidad: 'Sacos', emoji: '🧅' },
-    { id: 'zanahoria', nombre: 'Zanahoria (Saco)', categoria: 'hortalizas', destacado: false, unidad: 'Sacos', emoji: '🥕' },
-    { id: 'ajo', nombre: 'Ajo Morado', categoria: 'hortalizas', destacado: false, unidad: 'Kilos', emoji: '🧄' }
+    // Categoría: Aliños (Pestaña "Aliños 🌿")
+    { id: 'aji', nombre: 'aji', categoria: 'alinos', destacado: false, unidad: 'Kilos', emoji: '🌶️' },
+    { id: 'cebollin', nombre: 'cebollin', categoria: 'alinos', destacado: false, unidad: 'Atados', emoji: '🌱' },
+    { id: 'cilantro', nombre: 'cilantro', categoria: 'alinos', destacado: false, unidad: 'Atados', emoji: '🌿' },
+    { id: 'perejil', nombre: 'perejil', categoria: 'alinos', destacado: false, unidad: 'Atados', emoji: '🍃' },
+    { id: 'ajo-porro', nombre: 'ajo porro', categoria: 'alinos', destacado: false, unidad: 'Atados', emoji: '🥬' },
+    { id: 'ajo-criollo', nombre: 'ajo criollo', categoria: 'alinos', destacado: false, unidad: 'Kilos', emoji: '🧄' },
+    { id: 'pimenton', nombre: 'pimenton', categoria: 'alinos', destacado: false, unidad: 'Kilos', emoji: '🫑' },
+
+    // Categoría: Verduras y Hortalizas (Pestaña "Verduras 🥔")
+    { id: 'papa', nombre: 'papa', categoria: 'verduras', destacado: false, unidad: 'Sacos', emoji: '🥔' },
+    { id: 'zanahoria', nombre: 'zanahoria', categoria: 'verduras', destacado: false, unidad: 'Sacos', emoji: '🥕' },
+    { id: 'yuca', nombre: 'yuca', categoria: 'verduras', destacado: false, unidad: 'Sacos', emoji: '🪵' },
+    { id: 'ocumo-chino', nombre: 'ocumo chino', categoria: 'verduras', destacado: false, unidad: 'Sacos', emoji: '🤎' },
+    { id: 'name', nombre: 'ñame', categoria: 'verduras', destacado: false, unidad: 'Sacos', emoji: '🍠' },
+    { id: 'auyama', nombre: 'auyama', categoria: 'verduras', destacado: false, unidad: 'Kilos', emoji: '🎃' },
+    { id: 'repollo', nombre: 'repollo', categoria: 'verduras', destacado: false, unidad: 'Sacos', emoji: '🥬' },
+    { id: 'tomate', nombre: 'tomate', categoria: 'verduras', destacado: false, unidad: 'Cestas', emoji: '🍅' }
 ];
 
 const carouselItems = [
@@ -144,11 +159,19 @@ function renderGeneralProducts(items) {
 // --- Filtros y Búsqueda ---
 function filterProducts() {
     const activeTab = document.querySelector('.tab-btn.active')?.dataset.category || 'all';
-    const searchTerm = searchInput.value.toLowerCase().trim();
+    const searchTerm = searchInput.value
+        .toLowerCase()
+        .normalize('NFD')
+        .replace(/[\u0300-\u036f]/g, '')
+        .trim();
 
     const filtered = catálogoProductos.filter(p => {
         const matchCategory = activeTab === 'all' || p.categoria === activeTab;
-        const matchSearch = p.nombre.toLowerCase().includes(searchTerm);
+        const normalizedName = p.nombre
+            .toLowerCase()
+            .normalize('NFD')
+            .replace(/[\u0300-\u036f]/g, '');
+        const matchSearch = normalizedName.includes(searchTerm) || p.categoria.includes(searchTerm);
         return matchCategory && matchSearch;
     });
 
@@ -346,7 +369,7 @@ function checkoutToWhatsApp() {
 
     const lineasProductos = cart.map(item => {
         const emoji = item.emoji || '📦';
-        return `▪️ ${emoji} *${item.qty} ${item.unidad}* - ${item.nombre}`;
+        return `• ${emoji} *${item.qty} ${item.unidad}* x ${item.nombre}`;
     }).join('\n');
 
     let detalleNota = '';
