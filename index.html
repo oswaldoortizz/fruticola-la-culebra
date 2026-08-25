@@ -75,7 +75,7 @@
                 <a href="#about" class="text-gray-600 hover:text-avocado-deep transition font-medium">Nosotros</a>
                 <a href="#process" class="text-gray-600 hover:text-avocado-deep transition font-medium">Cómo
                     Funciona</a>
-                <a href="#catalog" class="text-gray-600 hover:text-avocado-deep transition font-medium">Catálogo</a>
+                <a href="catalogo.html" class="text-gray-600 hover:text-avocado-deep transition font-medium">Catálogo Mayorista</a>
             </nav>
             <div>
                 <button id="open-cart-btn"
@@ -106,7 +106,7 @@
                     rubro para garantizar la máxima calidad en tu flete.
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                    <a href="#catalog"
+                    <a href="catalogo.html"
                         class="w-full sm:w-auto text-white font-bold py-4 px-8 rounded-full text-lg shadow-lg cta-glow-effect">
                         <span>Explorar Catálogo Mayorista</span>
                         <span class="cta-arrow-bounce">🥑</span>
@@ -238,57 +238,31 @@
             </div>
         </section>
 
-        <!-- 4 & 5. EL CATÁLOGO CATEGORIZADO -->
+        <!-- 4. RUBROS ESTRELLA Y ACCESO AL CATÁLOGO COMPLETO -->
         <section id="catalog" class="py-24 bg-white">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center mb-16">
-                    <h2 class="text-4xl font-bold text-avocado-deep mb-8">Comenzar mi Lista de Cotización</h2>
-                    <!-- Buscador -->
-                    <div class="max-w-xl mx-auto relative">
-                        <span class="absolute inset-y-0 left-0 pl-4 flex items-center text-gray-400">
-                            🔍
-                        </span>
-                        <input type="text" id="search-input"
-                            placeholder="Buscar rubro (ej. aguacate, limón, lechoza...)"
-                            class="w-full pl-12 pr-4 py-4 rounded-full border-2 border-gray-100 bg-gray-50 focus:bg-white focus:border-fresh-green focus:ring-4 focus:ring-green-50 focus:outline-none transition-all shadow-sm text-lg">
-                    </div>
+                    <span class="text-fresh-green font-bold tracking-wider uppercase text-sm mb-2 block">Los Más Cotizados</span>
+                    <h2 class="text-4xl font-bold text-avocado-deep mb-4">Nuestros Rubros Estrella</h2>
+                    <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                        Los productos de mayor rotación y demanda garantizada en el Mercado Mayor de Coche.
+                    </p>
                 </div>
 
-                <!-- Productos Estrella (Destacados) -->
-                <div class="mb-16">
-                    <h3 class="text-2xl font-bold text-gray-800 mb-6 flex items-center gap-2">
-                        <span class="text-3xl">⭐</span> Productos Estrella
-                    </h3>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
-                        id="featured-products-grid">
-                        <!-- Featured products injected via JS -->
-                    </div>
+                <!-- Productos Estrella (Destacados con foto) -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
+                    id="featured-products-grid">
+                    <!-- Featured products injected via JS -->
                 </div>
 
-                <!-- Tabs -->
-                <div class="flex flex-wrap justify-center gap-4 mb-8" id="category-tabs">
-                    <button type="button"
-                        class="tab-btn active px-8 py-3 rounded-full font-semibold transition bg-fresh-green text-white shadow-md"
-                        data-category="all">Todas</button>
-                    <button type="button"
-                        class="tab-btn px-8 py-3 rounded-full font-semibold transition bg-gray-100 text-gray-600 hover:bg-gray-200"
-                        data-category="aguacates">Aguacates 🥑</button>
-                    <button type="button"
-                        class="tab-btn px-8 py-3 rounded-full font-semibold transition bg-gray-100 text-gray-600 hover:bg-gray-200"
-                        data-category="frutas">Frutas 🍎</button>
-                    <button type="button"
-                        class="tab-btn px-8 py-3 rounded-full font-semibold transition bg-gray-100 text-gray-600 hover:bg-gray-200"
-                        data-category="alinos">Aliños 🌿</button>
-                    <button type="button"
-                        class="tab-btn px-8 py-3 rounded-full font-semibold transition bg-gray-100 text-gray-600 hover:bg-gray-200"
-                        data-category="verduras">Verduras 🥔</button>
-                </div>
-
-                <!-- Hoja de Pedido Mayorista (Lista) -->
-                <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
-                    <ul id="general-products-list" class="divide-y divide-gray-100">
-                        <!-- General products injected via JS -->
-                    </ul>
+                <!-- Botón CTA para el Catálogo Completo (v7) -->
+                <div class="text-center mt-16 pt-8 border-t border-gray-100">
+                    <p class="text-gray-600 mb-6 font-medium text-lg">¿Buscas hortalizas, verduras pesadas, aliños o más frutas para tu negocio?</p>
+                    <a href="catalogo.html"
+                        class="inline-flex items-center justify-center gap-3 bg-fresh-green hover:bg-green-700 text-white font-bold py-5 px-8 sm:px-12 rounded-full text-lg sm:text-xl shadow-xl transition-all transform hover:scale-105 cta-glow-effect">
+                        <span>👉 ¿Buscas más variedad? Explora nuestro Catálogo Mayorista Completo</span>
+                        <span>📦</span>
+                    </a>
                 </div>
             </div>
         </section>
