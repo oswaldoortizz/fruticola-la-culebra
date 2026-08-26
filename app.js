@@ -96,7 +96,7 @@ function renderCarousel() {
     const items = [...carouselItems, ...carouselItems, ...carouselItems];
     carouselTrack.innerHTML = items.map(item => `
         <div onclick="irAlProducto('${item.id}')" class="w-72 flex-shrink-0 relative rounded-2xl overflow-hidden shadow-md group cursor-pointer">
-            <img src="${item.img}" alt="${item.name}" class="w-full h-56 object-cover group-hover:scale-110 transition duration-700 ease-in-out">
+            <img src="${item.img}" alt="${item.name}" loading="lazy" class="w-full h-56 object-cover group-hover:scale-110 transition duration-700 ease-in-out">
             <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex items-end p-6">
                 <h3 class="text-white font-bold text-xl">${item.name}</h3>
             </div>
@@ -104,7 +104,7 @@ function renderCarousel() {
     `).join('');
 }
 
-// --- Función de formateo estético de categorías ---
+// --- Función de formateo estético de categorías (v10 / v11) ---
 function getCategoryLabel(categoria) {
     const map = {
         'aguacates': 'Aguacates',
@@ -112,7 +112,7 @@ function getCategoryLabel(categoria) {
         'alinos': 'Aliños',
         'aliños': 'Aliños',
         'verduras': 'Verduras',
-        'hortalizas': 'Hortalizas'
+        'hortalizas': 'Hortalizas y Verduras'
     };
     return map[categoria] || (categoria.charAt(0).toUpperCase() + categoria.slice(1));
 }
@@ -123,7 +123,7 @@ function renderFeaturedProducts() {
     featuredGrid.innerHTML = featured.map(product => `
         <div id="card-${product.id}" class="bg-white rounded-3xl shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-100 flex flex-col group">
             <div class="relative h-48 overflow-hidden">
-                <img src="${product.imagen}" alt="${product.nombre}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                <img src="${product.imagen}" alt="${product.nombre}" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                 <div class="absolute top-4 left-4 bg-white/90 backdrop-blur text-fresh-green text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
                     ${getCategoryLabel(product.categoria)}
                 </div>
@@ -151,10 +151,12 @@ function renderGeneralProducts(items) {
 
     if (items.length === 0) {
         generalList.innerHTML = `
-            <li class="p-12 text-center text-gray-500">
-                <span class="text-4xl mb-3 block">🔍</span>
-                <p class="text-lg font-medium">No encontramos rubros con esa búsqueda.</p>
-                <p class="text-sm text-gray-400 mt-1">Escríbelo en la caja de notas del carrito y lo buscaremos por ti.</p>
+            <li class="p-8 sm:p-12 text-center bg-gray-50/60 rounded-2xl m-4 border border-dashed border-gray-200">
+                <span class="text-4xl sm:text-5xl mb-3 block">😮</span>
+                <p class="text-lg sm:text-xl font-bold text-gray-800 mb-2">¡Epa! No encontramos ese producto en la lista... 😮</p>
+                <p class="text-sm sm:text-base text-gray-600 max-w-md mx-auto leading-relaxed">
+                    Pero no te preocupes, escríbelo en la caja de <strong>'Pedido Especial'</strong> de abajo y nosotros te lo resolvemos directo en el Mercado de Coche. 🐍
+                </p>
             </li>`;
         return;
     }

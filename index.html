@@ -3,17 +3,28 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Frutícola La Culebra: Mayoristas de Frutas y Verduras en Coche</title>
-    <meta name="description"
-        content="Distribución y Venta de Frutas y Verduras al Mayor en Caracas. Especialistas en Aguacates. Precios reales del Mercado de Coche.">
+    <!-- Favicon Oficial (Aparece en las pestañas del navegador y en los resultados de Google Search) -->
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="shortcut icon" href="favicon.ico">
 
-    <!-- Open Graph Data -->
-    <meta property="og:title" content="Frutícola La Culebra - Mayoristas en Caracas">
+    <!-- SEO Principal -->
+    <title>Frutícola La Culebra | Mayorista del Mercado de Coche, Caracas</title>
+    <meta name="description"
+        content="Distribución mayorista de aguacates, frutas, verduras y aliños en Caracas directo desde el Mercado de Coche. Cestas, sacos y kilos al mejor precio del día.">
+
+    <!-- Metadatos de Redes Sociales (Open Graph - WhatsApp, Facebook, etc.) -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Frutícola La Culebra 🥑 | Mayoristas de Confianza en Coche">
     <meta property="og:description"
-        content="Llevamos la frescura del Mercado de Coche directo a tu negocio. Cotiza al instante.">
-    <meta property="og:image" content="assets/images/hero_bg.jpg">
-    <meta property="og:url" content="https://fruticolalaculebra.com">
+        content="Arma tu cotización de frutas, hortalizas y aliños al mayor desde nuestra web y recíbela en tu negocio en Caracas.">
+    <meta property="og:image" content="https://oswaldoortizz.github.io/fruticola-la-culebra/logo-compartir.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:url" content="https://oswaldoortizz.github.io/fruticola-la-culebra/">
+    <meta property="og:site_name" content="Frutícola La Culebra">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -75,7 +86,7 @@
                 <a href="#about" class="text-gray-600 hover:text-avocado-deep transition font-medium">Nosotros</a>
                 <a href="#process" class="text-gray-600 hover:text-avocado-deep transition font-medium">Cómo
                     Funciona</a>
-                <a href="catalogo.html" class="text-gray-600 hover:text-avocado-deep transition font-medium">Catálogo Mayorista</a>
+                <a href="#catalog" class="text-gray-600 hover:text-avocado-deep transition font-medium">Catálogo</a>
             </nav>
             <div>
                 <button id="open-cart-btn"
@@ -103,10 +114,10 @@
                 </h1>
                 <p class="text-lg sm:text-xl text-gray-200 mb-8 max-w-3xl mx-auto leading-relaxed">
                     Llevamos la frescura del Mercado de Coche directo a tu negocio. Seleccionamos cuidadosamente cada
-                    rubro para garantizar la máxima calidad en tu flete.
+                    rubro para garantizar la máxima calidad para tu negocio.
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                    <a href="catalogo.html"
+                    <a href="#catalog"
                         class="w-full sm:w-auto text-white font-bold py-4 px-8 rounded-full text-lg shadow-lg cta-glow-effect">
                         <span>Explorar Catálogo Mayorista</span>
                         <span class="cta-arrow-bounce">🥑</span>
@@ -198,21 +209,15 @@
                 </p>
 
                 <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-                    <a href="catalogo.html"
-                        class="group bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border-2 border-transparent hover:border-fresh-green block">
+                    <div
+                        class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
                         <div
-                            class="w-16 h-16 bg-green-50 text-fresh-green rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6 group-hover:bg-fresh-green group-hover:text-white transition-colors">
+                            class="w-16 h-16 bg-green-50 text-fresh-green rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6">
                             1</div>
-                        <h3 class="font-bold text-lg mb-2 text-gray-800 group-hover:text-fresh-green transition-colors flex items-center justify-center gap-1">
-                            <span>Selecciona tu Mercancía</span>
-                            <span>🥑</span>
-                        </h3>
-                        <p class="text-gray-500 text-sm leading-relaxed mb-4">Añade cestas, kilos o sacos a tu cotizador interactivo.</p>
-                        <span class="inline-flex items-center gap-1 text-xs font-bold text-fresh-green bg-green-50 group-hover:bg-green-100 px-3 py-1.5 rounded-full transition">
-                            <span>Ver Catálogo Digital</span>
-                            <span>→</span>
-                        </span>
-                    </a>
+                        <h3 class="font-bold text-lg mb-3">Selecciona tu Mercancía</h3>
+                        <p class="text-gray-500 text-sm leading-relaxed">Añade cestas o kilos a tu cotizador
+                            interactivo.</p>
+                    </div>
                     <div
                         class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
                         <div
@@ -244,31 +249,57 @@
             </div>
         </section>
 
-        <!-- 4. RUBROS ESTRELLA Y ACCESO AL CATÁLOGO COMPLETO -->
+        <!-- 4 & 5. EL CATÁLOGO CATEGORIZADO -->
         <section id="catalog" class="py-24 bg-white">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center mb-16">
-                    <span class="text-fresh-green font-bold tracking-wider uppercase text-sm mb-2 block">Los Más Cotizados</span>
-                    <h2 class="text-4xl font-bold text-avocado-deep mb-4">Nuestros Rubros Estrella</h2>
-                    <p class="text-lg text-gray-600 max-w-2xl mx-auto">
-                        Los productos de mayor rotación y demanda garantizada en el Mercado Mayor de Coche.
-                    </p>
+                    <h2 class="text-4xl font-bold text-avocado-deep mb-8">Comenzar mi Lista de Cotización</h2>
+                    <!-- Buscador -->
+                    <div class="max-w-xl mx-auto relative">
+                        <span class="absolute inset-y-0 left-0 pl-4 flex items-center text-gray-400">
+                            🔍
+                        </span>
+                        <input type="text" id="search-input"
+                            placeholder="Buscar rubro (ej. aguacate, limón, lechoza...)"
+                            class="w-full pl-12 pr-4 py-4 rounded-full border-2 border-gray-100 bg-gray-50 focus:bg-white focus:border-fresh-green focus:ring-4 focus:ring-green-50 focus:outline-none transition-all shadow-sm text-lg">
+                    </div>
                 </div>
 
-                <!-- Productos Estrella (Destacados con foto) -->
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
-                    id="featured-products-grid">
-                    <!-- Featured products injected via JS -->
+                <!-- Productos Estrella (Destacados) -->
+                <div class="mb-16">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-6 flex items-center gap-2">
+                        <span class="text-3xl">⭐</span> Productos Estrella
+                    </h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
+                        id="featured-products-grid">
+                        <!-- Featured products injected via JS -->
+                    </div>
                 </div>
 
-                <!-- Botón CTA para el Catálogo Completo (v7) -->
-                <div class="text-center mt-16 pt-8 border-t border-gray-100">
-                    <p class="text-gray-600 mb-6 font-medium text-lg">¿Buscas hortalizas, verduras pesadas, aliños o más frutas para tu negocio?</p>
-                    <a href="catalogo.html"
-                        class="inline-flex items-center justify-center gap-3 bg-fresh-green hover:bg-green-700 text-white font-bold py-5 px-8 sm:px-12 rounded-full text-lg sm:text-xl shadow-xl transition-all transform hover:scale-105 cta-glow-effect">
-                        <span>👉 ¿Buscas más variedad? Explora nuestro Catálogo Mayorista Completo</span>
-                        <span>📦</span>
-                    </a>
+                <!-- Tabs -->
+                <div class="flex flex-wrap justify-center gap-4 mb-8" id="category-tabs">
+                    <button type="button"
+                        class="tab-btn active px-8 py-3 rounded-full font-semibold transition bg-fresh-green text-white shadow-md"
+                        data-category="all">Todas</button>
+                    <button type="button"
+                        class="tab-btn px-8 py-3 rounded-full font-semibold transition bg-gray-100 text-gray-600 hover:bg-gray-200"
+                        data-category="aguacates">Aguacates 🥑</button>
+                    <button type="button"
+                        class="tab-btn px-8 py-3 rounded-full font-semibold transition bg-gray-100 text-gray-600 hover:bg-gray-200"
+                        data-category="frutas">Frutas 🍎</button>
+                    <button type="button"
+                        class="tab-btn px-8 py-3 rounded-full font-semibold transition bg-gray-100 text-gray-600 hover:bg-gray-200"
+                        data-category="alinos">Aliños 🌿</button>
+                    <button type="button"
+                        class="tab-btn px-8 py-3 rounded-full font-semibold transition bg-gray-100 text-gray-600 hover:bg-gray-200"
+                        data-category="verduras">Verduras 🥔</button>
+                </div>
+
+                <!-- Hoja de Pedido Mayorista (Lista) -->
+                <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+                    <ul id="general-products-list" class="divide-y divide-gray-100">
+                        <!-- General products injected via JS -->
+                    </ul>
                 </div>
             </div>
         </section>
@@ -319,7 +350,8 @@
     </div>
 
     <!-- Floating Support Button -->
-    <a href="https://wa.me/584241576083?text=Hola,%20necesito%20soporte%20rápido" target="_blank"
+    <a href="https://wa.me/584241576083?text=Hola,%20quisiera%20saber%20el%20precio%20de%20algunos%20productos%20en%20especificos."
+        target="_blank"
         class="fixed bottom-6 left-6 bg-fresh-green text-white p-4 rounded-full shadow-2xl hover:bg-green-600 transition z-40 transform hover:scale-110 flex items-center justify-center">
         <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
             <path
