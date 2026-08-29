@@ -54,8 +54,26 @@ const carouselItems = [
     { id: 'patilla', name: 'patilla', img: 'assets/images/patilla.jpg' }
 ];
 
-// --- 2. Persistencia Compartida del Carrito (localStorage) ---
-let cart = JSON.parse(localStorage.getItem('culebra_cart')) || [];
+// --- 2. Persistencia Compartida del Carrito y Expiración Automática (12 Horas) ---
+const EXPIRATION_TIME = 12 * 60 * 60 * 1000; // 12 horas en milisegundos
+
+function checkAndLoadCart() {
+    const savedCart = localStorage.getItem('culebra_cart');
+    const timestamp = localStorage.getItem('carrito_timestamp');
+
+    if (savedCart && timestamp) {
+        const now = Date.now();
+        const elapsed = now - parseInt(timestamp, 10);
+        if (elapsed > EXPIRATION_TIME) {
+            localStorage.removeItem('culebra_cart');
+            localStorage.removeItem('carrito_timestamp');
+            return [];
+        }
+    }
+    return savedCart ? JSON.parse(savedCart) : [];
+}
+
+let cart = checkAndLoadCart();
 
 // --- 3. Referencias al DOM ---
 const featuredGrid = document.getElementById('featured-products-grid');
@@ -72,9 +90,11 @@ const cartCount = document.getElementById('cart-count');
 const cartItemsContainer = document.getElementById('cart-items');
 const whatsappBtn = document.getElementById('whatsapp-checkout-btn');
 const specialRequest = document.getElementById('special-request');
+const floatingSupportBtn = document.getElementById('floating-support-btn');
 
 // --- 4. Inicialización con Verificación Defensiva ---
 function init() {
+    cart = checkAndLoadCart();
     if (carouselTrack) {
         renderCarousel();
     }
@@ -236,6 +256,7 @@ function setupEventListeners() {
     if (closeCartBtn) closeCartBtn.addEventListener('click', closeCart);
     if (cartOverlay) cartOverlay.addEventListener('click', closeCart);
     if (whatsappBtn) whatsappBtn.addEventListener('click', checkoutToWhatsApp);
+    if (floatingSupportBtn) floatingSupportBtn.addEventListener('click', redirectToSupport);
 }
 
 // Delegación global de eventos para evitar que los botones se queden sin listener al filtrar o buscar
@@ -341,6 +362,7 @@ function updateCartItemQty(productId, newQty) {
 
 function saveCart() {
     localStorage.setItem('culebra_cart', JSON.stringify(cart));
+    localStorage.setItem('carrito_timestamp', Date.now().toString());
 }
 
 function updateCartUI() {
@@ -431,6 +453,31 @@ ${lineasProductos}${detalleNota}
     const encoded = encodeURIComponent(mensaje);
     window.open(`https://api.whatsapp.com/send?phone=${phone}&text=${encoded}`, '_blank');
 }
+
+// --- 10. Soporte Rápido Inteligente por WhatsApp (Caso A y Caso B) ---
+function redirectToSupport(e) {
+    if (e) e.preventDefault();
+    const phone = "584241576083";
+    let mensaje = "";
+
+    if (!cart || cart.length === 0) {
+        // Caso A (Carrito vacío)
+        mensaje = "Hola, quisiera saber el precio de algunos productos en especificos.";
+    } else {
+        // Caso B (Carrito con productos)
+        const lineas = cart.map(item => {
+            const emoji = item.emoji ? `${item.emoji} ` : '';
+            const unidad = item.unidad ? ` ${item.unidad}` : '';
+            return `• ${emoji}${item.qty}${unidad} x ${item.nombre}`.replace(/\s+/g, ' ').trim();
+        }).join('\n');
+        mensaje = `Hola, quisiera saber el precio de algunos productos en especificos. Mi cotización actual es:\n${lineas}`;
+    }
+
+    const encoded = encodeURIComponent(mensaje);
+    const url = `https://api.whatsapp.com/send?phone=${phone}&text=${encoded}`;
+    window.open(url, '_blank');
+}
+window.redirectToSupport = redirectToSupport;
 
 // Scroll interactivo para elementos del carrusel
 window.irAlProducto = function(productId) {
